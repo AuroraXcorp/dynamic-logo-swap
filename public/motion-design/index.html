@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Médico no Bolso - Ecossistema de Saúde</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Background pattern -->
+    <div class="background-pattern">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#e2e8f0" stroke-width="0.5"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid)" />
+      </svg>
+    </div>
+
+    <!-- Main container -->
+    <div class="main-wrapper">
+      
+      <!-- Outer decorative ring - ANIMATED -->
+      <div class="decorative-ring outer-ring animate-rotate-slow"></div>
+      
+      <!-- Outer labels - FIXED -->
+      <div class="labels-container outer-labels" id="outerLabels"></div>
+
+      <!-- Middle decorative ring - ANIMATED -->
+      <div class="decorative-ring middle-ring neumorphic animate-rotate-reverse-medium">
+        <div class="inner-bg"></div>
+      </div>
+      
+      <!-- Text on middle ring - FIXED -->
+      <div class="text-ring">
+        <svg viewBox="0 0 650 650">
+          <defs>
+            <path id="textCircle" d="M 325,325 m -260,0 a 260,260 0 1,1 520,0 a 260,260 0 1,1 -520,0"/>
+          </defs>
+          <text class="circular-text">
+            <textPath href="#textCircle" startOffset="0%">
+              GESTÃO ESTRATÉGICA E QUALIDADE • GESTÃO ESTRATÉGICA E QUALIDADE •
+            </textPath>
+          </text>
+        </svg>
+      </div>
+
+      <!-- Inner decorative ring - ANIMATED -->
+      <div class="decorative-ring inner-ring animate-rotate-medium"></div>
+
+      <!-- Inner segment labels - FIXED -->
+      <div class="labels-container inner-labels" id="innerLabels"></div>
+
+      <!-- Center logo container -->
+      <div class="center-container animate-float">
+        <div class="logo-wrapper animate-pulse-glow">
+          <img src="logo-medico-no-bolso.png" alt="Médico no Bolso" class="logo">
+        </div>
+      </div>
+
+      <!-- Decorative orbiting dots - ANIMATED -->
+      <div class="dots-container dots-fast animate-rotate-fast" id="dotsFast"></div>
+      
+      <!-- Another set of decorative dots - ANIMATED -->
+      <div class="dots-container dots-slow animate-rotate-reverse-slow" id="dotsSlow"></div>
+
+      <!-- Small orbiting ring - ANIMATED -->
+      <div class="decorative-ring small-ring animate-rotate-reverse-medium"></div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

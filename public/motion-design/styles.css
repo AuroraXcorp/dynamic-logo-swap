@@ -1,0 +1,319 @@
+/* Reset e base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background: #f5f7fa;
+  --foreground: #1e293b;
+  --primary: #0080ff;
+  --primary-light: #66b3ff;
+  --muted-foreground: #64748b;
+  --circle-bg: #f1f5f9;
+  --circle-text: #475569;
+  --circle-border: #e2e8f0;
+  --shadow-light: #ffffff;
+  --shadow-dark: #d1d9e6;
+  --card-bg: #ffffff;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+  min-height: 100vh;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 2rem 0;
+}
+
+.background-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.3;
+}
+
+.main-wrapper {
+  position: relative;
+  width: 900px;
+  height: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Neumorphic styles */
+.neumorphic {
+  background: var(--circle-bg);
+  box-shadow: 
+    8px 8px 16px var(--shadow-dark),
+    -8px -8px 16px var(--shadow-light);
+}
+
+.neumorphic-inset {
+  background: var(--circle-bg);
+  box-shadow: 
+    inset 4px 4px 8px var(--shadow-dark),
+    inset -4px -4px 8px var(--shadow-light);
+}
+
+/* Decorative rings */
+.decorative-ring {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.outer-ring {
+  width: 820px;
+  height: 820px;
+  border: 2px dashed var(--circle-border);
+  opacity: 0.4;
+}
+
+.middle-ring {
+  width: 650px;
+  height: 650px;
+}
+
+.middle-ring .inner-bg {
+  position: absolute;
+  inset: 16px;
+  border-radius: 50%;
+  background: var(--background);
+  opacity: 0.5;
+}
+
+.inner-ring {
+  width: 480px;
+  height: 480px;
+  border: 1px solid var(--circle-border);
+  opacity: 0.6;
+}
+
+.small-ring {
+  width: 320px;
+  height: 320px;
+  border: 1px solid rgba(0, 128, 255, 0.2);
+}
+
+/* Labels containers */
+.labels-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.outer-labels {
+  width: 850px;
+  height: 850px;
+}
+
+.inner-labels {
+  width: 480px;
+  height: 480px;
+}
+
+/* Label cards */
+.label-card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: var(--circle-bg);
+  box-shadow: 
+    8px 8px 16px var(--shadow-dark),
+    -8px -8px 16px var(--shadow-light);
+  border-radius: 12px;
+  padding: 10px 16px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--circle-text);
+  white-space: pre-line;
+  min-width: 90px;
+}
+
+.label-card.inner {
+  width: 128px;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border-radius: 16px;
+}
+
+/* Text ring */
+.text-ring {
+  position: absolute;
+  width: 650px;
+  height: 650px;
+}
+
+.text-ring svg {
+  width: 100%;
+  height: 100%;
+}
+
+.circular-text {
+  fill: var(--muted-foreground);
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.25em;
+}
+
+/* Center logo */
+.center-container {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  background: var(--circle-bg);
+  box-shadow: 
+    inset 4px 4px 8px var(--shadow-dark),
+    inset -4px -4px 8px var(--shadow-light);
+}
+
+.logo-wrapper {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.logo {
+  width: 128px;
+  height: 128px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+/* Dots containers */
+.dots-container {
+  position: absolute;
+}
+
+.dots-fast {
+  width: 550px;
+  height: 550px;
+}
+
+.dots-slow {
+  width: 750px;
+  height: 750px;
+}
+
+.dot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+}
+
+.dot.large {
+  width: 12px;
+  height: 12px;
+  margin-left: -6px;
+  margin-top: -6px;
+  background: var(--primary);
+  box-shadow: 0 4px 14px rgba(0, 128, 255, 0.5);
+}
+
+.dot.small {
+  width: 8px;
+  height: 8px;
+  margin-left: -4px;
+  margin-top: -4px;
+  background: var(--primary-light);
+  box-shadow: 0 2px 8px rgba(102, 179, 255, 0.5);
+}
+
+/* Animations */
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rotate-slow-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 20px rgba(0, 128, 255, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 40px rgba(0, 128, 255, 0.6));
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-rotate-slow {
+  animation: rotate-slow 60s linear infinite;
+}
+
+.animate-rotate-medium {
+  animation: rotate-slow 40s linear infinite;
+}
+
+.animate-rotate-fast {
+  animation: rotate-slow 25s linear infinite;
+}
+
+.animate-rotate-reverse-slow {
+  animation: rotate-slow-reverse 50s linear infinite;
+}
+
+.animate-rotate-reverse-medium {
+  animation: rotate-slow-reverse 35s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .main-wrapper {
+    transform: scale(0.7);
+  }
+}
+
+@media (max-width: 680px) {
+  .main-wrapper {
+    transform: scale(0.5);
+  }
+}
+
+@media (max-width: 480px) {
+  .main-wrapper {
+    transform: scale(0.35);
+  }
+}
